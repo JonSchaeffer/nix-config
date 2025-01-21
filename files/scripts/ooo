@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# Get the date of the next Wednesday
+next_wednesday=$(gdate -d "next wednesday" '+%Y-%m-%d')
+
+# Get the date of the previous Wednesday
+previous_wednesday=$(gdate -d "last wednesday" '+%Y-%m-%d')
+
+# Get the date of the Wednesday after next
+following_wednesday=$(gdate -d "next wednesday + 7 days" '+%Y-%m-%d')
+
+# Define the file path for the weekly note
+file="/Users/jon/Library/Mobile Documents/iCloud~md~obsidian/Documents/notes/periodic-notes/1-1/${next_wednesday}.md"
+
+cd "$SECOND_BRAIN" || exit
+
+new_note() {
+	touch "$file"
+
+	# Format the file with the weekly template
+	cat <<EOF >"$file"
+# Week of $next_wednesday
+
+[[$previous_wednesday]] - [[$following_wednesday]]
+
+## Weekly Update
+
+
+## Needs from Steve
+
+
+## Blockers
+
+
+EOF
+
+}
+
+# If the weekly note does not exist, create a new one.
+if [ ! -f "$file" ]; then
+	echo "File does not exist, creating new weekly note."
+	new_note
+fi
+
+# Open the weekly note at the bottom of the file in insert mode and run NoNeckPain to make it center
+nvim '+ normal Gzzo' "$file" -c :NoNeckPain

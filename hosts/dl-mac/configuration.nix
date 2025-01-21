@@ -151,6 +151,7 @@
       "yazi"
       "yq"
       "zoxide"
+      "zsh-syntax-highlighting"
     ];
   };
 

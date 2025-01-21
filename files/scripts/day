@@ -1,0 +1,46 @@
+#!/bin/bash
+
+today=$(date +"%Y-%m-%d")
+tomorrow=$(gdate -d "tomorrow" '+%Y-%m-%d')
+yesterday=$(gdate -d "yesterday" '+%Y-%m-%d')
+file="/Users/jon/Library/Mobile Documents/iCloud~md~obsidian/Documents/notes/periodic-notes/daily-notes/$(date +"%Y-%m-%d").md"
+
+cd "$SECOND_BRAIN" || exit
+
+new_note() {
+	touch "$file"
+
+	# Format the file with the daily template
+	cat <<EOF >"$file"
+# $today
+
+[[$yesterday]] - [[$tomorrow]]
+
+## Objectives
+
+What do I want to achieve today?
+
+## Todo
+
+- [ ] todo
+
+
+## Notes
+
+
+## Tomorrow
+
+What needs done tomorrow?
+EOF
+
+}
+
+# If the daily note does not exist, create a new one.
+# this uses the test command with the -f flag.
+if [ ! -f "$file" ]; then
+	echo "File does not exist, creating new daily note."
+	new_note
+fi
+
+# Open the daily note at the bottom of the file in insert mode and run NoNeckPain to make it center
+nvim '+ normal Gzzo' "$file" -c :NoNeckPain

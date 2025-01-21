@@ -43,6 +43,7 @@
       jon = {
         fullName = "Jonathan Schaeffer";
         name = "jon";
+        email = "jschaeffer97@gmail.com";
       };
     };
 
