@@ -45,6 +45,11 @@
         name = "jon";
         email = "jschaeffer97@gmail.com";
       };
+      jon.schaeffer = {
+        fullName = "Jonathan Schaeffer";
+        name = "jon.schaeffer";
+        email = "jon.schaeffer@fastly.com;
+      };
     };
 
     # Function for NixOS system configuration
@@ -93,10 +98,12 @@
 
     darwinConfigurations = {
       "dl-mac" = mkDarwinConfiguration "dl-mac" "jon";
+      "fast-mac" = mkDarwinConfiguration "fast-mac" "jon.schaeffer";
     };
 
     homeConfigurations = {
       "jon@dl-mac" = mkHomeConfiguration "aarch64-darwin" "jon" "dl-mac";
+      "jon.schaeffer@fast-mac" = mkHomeConfiguration "aarch64-darwin" "jon.schaeffer" "fast-mac";
     };
 
     overlays = import ./overlays {inherit inputs;};
