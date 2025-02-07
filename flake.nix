@@ -45,10 +45,11 @@
         name = "jon";
         email = "jschaeffer97@gmail.com";
       };
-      jon.schaeffer = {
+      "jon.schaeffer" = {
         fullName = "Jonathan Schaeffer";
         name = "jon.schaeffer";
-        email = "jon.schaeffer@fastly.com;
+        email = "jon.schaeffer@fastly.com";
+        username = "jon.schaeffer";
       };
     };
 

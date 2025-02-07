@@ -136,7 +136,6 @@
       "terraform"
       "tilt"
       "tmux"
-      "tmux-fingers"
       "tree"
       "vcluster"
       "wget"
