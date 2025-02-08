@@ -100,11 +100,13 @@
     darwinConfigurations = {
       "dl-mac" = mkDarwinConfiguration "dl-mac" "jon";
       "fast-mac" = mkDarwinConfiguration "fast-mac" "jon.schaeffer";
+      "home-mac" = mkDarwinConfiguration "home-mac" "jon";
     };
 
     homeConfigurations = {
       "jon@dl-mac" = mkHomeConfiguration "aarch64-darwin" "jon" "dl-mac";
       "jon.schaeffer@fast-mac" = mkHomeConfiguration "aarch64-darwin" "jon.schaeffer" "fast-mac";
+      "jon@home-mac"  = mkHomeConfiguration "aarch64-darwin" "jon" "home-mac";
     };
 
     overlays = import ./overlays {inherit inputs;};
