@@ -98,11 +98,13 @@
     casks = [
       "arc"
       "bruno"
+      "discord"
       "ghostty"
       "google-cloud-sdk"
       "meetingbar"
       "obsidian"
       "orbstack"
+      "spotify"
       "tableplus"
       "unnaturalscrollwheels"
     ];
@@ -133,6 +135,7 @@
       "neovim"
       "ripgrep"
       "sshpass"
+      "tailscale"
       "terraform"
       "tilt"
       "tmux"
