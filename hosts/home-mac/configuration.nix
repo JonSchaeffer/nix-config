@@ -135,7 +135,6 @@
       "neovim"
       "ripgrep"
       "sshpass"
-      "tailscale"
       "terraform"
       "tilt"
       "tmux"
