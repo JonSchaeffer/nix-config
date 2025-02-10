@@ -98,11 +98,13 @@
     casks = [
       "arc"
       "bruno"
+      "flux"
       "ghostty"
       "google-cloud-sdk"
       "meetingbar"
       "obsidian"
       "orbstack"
+      "spotify"
       "tableplus"
       "unnaturalscrollwheels"
     ];

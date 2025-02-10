@@ -96,8 +96,10 @@
   homebrew = {
     enable = true;
     casks = [
+      "1password"
       "arc"
       "bruno"
+      "flux"
       "discord"
       "ghostty"
       "google-cloud-sdk"
