@@ -38,6 +38,9 @@
       export LIBVIRT_DEFAULT_URI=qemu:///system
       ZSH_THEME="agnoster"
       zstyle ':omz:update' mode auto      # update automatically without asking
+      export INFRA_SERVER=infra.plat.k8s.secretcdn.net
+      export INFRA_PROVIDER=okta
+      export INFRA_SKIP_VERSION_CHECK=true
 
       plugins=(
         ansible
