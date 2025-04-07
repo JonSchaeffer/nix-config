@@ -7,7 +7,7 @@ imports = [
   ../modules/ghostty.nix
   ../modules/home.nix
   ../modules/lazygit.nix
-  ../modules/neovim.nix
+  #../modules/neovim.nix
   ../modules/scripts.nix
   ../modules/tmux.nix
   ../modules/zsh.nix

@@ -5,9 +5,9 @@
     enableCompletion = true;
     shellAliases = {
       # k9s
-      k9sdev = "k9s --context dev -n all";
-      k9sstage = "k9s --context staging -n all";
-      k9sprod = "k9s --context production -n all";
+      k9sdev = "k9s --context infra:dev-awsuse2 -n api-services";
+      k9sstag = "k9s --context infra:stg-awsuse2 -n api-services";
+      k9sprod = "k9s --context infra:prd-awsuse2 -n api-services";
 
       # Open Obisdian Notes
       notes="cd /Users/jon/Library/Mobile Documents/iCloud~md~obsidian/Documents";
@@ -31,9 +31,13 @@
       v = "nvim";
       vi = "nvim";
       vim = "nvim";
+
+      # github
+      ghpr = "gh pr create --fill --template pull_request_template.md -draft";
     };
     initExtra = ''
       # Path to your oh-my-zsh installation.
+      export EDITOR=nvim
       export ZSH="$HOME/.oh-my-zsh"
       export LIBVIRT_DEFAULT_URI=qemu:///system
       ZSH_THEME="agnoster"
