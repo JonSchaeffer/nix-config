@@ -34,10 +34,15 @@
 
       # github
       ghpr = "gh pr create --fill --template pull_request_template.md -draft";
+
+      # search shell history
+      hs = "history | grep";
+
     };
     initExtra = ''
       # Path to your oh-my-zsh installation.
       export EDITOR=nvim
+      export GPG_TTY=$(tty)
       export ZSH="$HOME/.oh-my-zsh"
       export LIBVIRT_DEFAULT_URI=qemu:///system
       ZSH_THEME="agnoster"
@@ -45,6 +50,8 @@
       export INFRA_SERVER=infra.plat.k8s.secretcdn.net
       export INFRA_PROVIDER=okta
       export INFRA_SKIP_VERSION_CHECK=true
+      export PATH="$HOME/go/bin:$PATH"
+      export ANTHROPIC_MODEL="arn:aws:bedrock:us-east-2:635784355978:inference-profile/us.anthropic.claude-sonnet-4-5-20250929-v1:0"
 
       plugins=(
         ansible
