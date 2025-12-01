@@ -10,6 +10,17 @@ return {
     keys = {
       { '<leader>e', '<cmd>Neotree reveal left toggle<cr>', desc = 'View File Explorer' },
     },
+    opts = {
+      window = {
+        mappings = {
+          ["<cr>"] = "open",
+          ["<C-s>"] = "open_split",
+          ["<C-v>"] = "open_vsplit",
+          ["s"] = "open_split",
+          ["v"] = "open_vsplit",
+        },
+      },
+    },
   },
   {
     "antosha417/nvim-lsp-file-operations",

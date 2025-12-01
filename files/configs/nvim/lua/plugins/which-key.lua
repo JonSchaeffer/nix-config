@@ -176,10 +176,8 @@ return {
 			{ "<leader>h2", function() require("harpoon"):list():select(2) end, desc = "Goto 2" },
 			{ "<leader>h3", function() require("harpoon"):list():select(3) end, desc = "Goto 3" },
 			{ "<leader>h4", function() require("harpoon"):list():select(4) end, desc = "Goto 4" },
-			{ "<C-h>1", function() require("harpoon"):list():select(1) end, desc = "Harpoon 1" },
-			{ "<C-h>2", function() require("harpoon"):list():select(2) end, desc = "Harpoon 2" },
-			{ "<C-h>3", function() require("harpoon"):list():select(3) end, desc = "Harpoon 3" },
-			{ "<C-h>4", function() require("harpoon"):list():select(4) end, desc = "Harpoon 4" },
+			{ "<leader>h5", function() require("harpoon"):list():select(5) end, desc = "Goto 5" },
+			{ "<leader>h6", function() require("harpoon"):list():select(6) end, desc = "Goto 6" },
 
 			-- File Explorer
 			{ "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Explorer (Neo-tree)" },
@@ -192,12 +190,8 @@ return {
 			-- Yank history
 			{ "<leader>p", "<cmd>Telescope yank_history<cr>", desc = "Yank History" },
 
-			-- Window/Tmux navigation (vim-tmux-navigator)
-			{ "<C-h>", desc = "Navigate Left (tmux-aware)" },
-			{ "<C-j>", desc = "Navigate Down (tmux-aware)" },
-			{ "<C-k>", desc = "Navigate Up (tmux-aware)", mode = "n" },
-			{ "<C-l>", desc = "Navigate Right (tmux-aware)" },
-			{ "<C-\\>", desc = "Navigate Previous (tmux-aware)" },
+			-- Window/Tmux navigation is handled by vim-tmux-navigator plugin
+			-- Don't register these in which-key to avoid conflicts with prefix mappings
 
 			-- Better up/down
 			{ "j", "v:count == 0 ? 'gj' : 'j'", expr = true, desc = "Down" },
