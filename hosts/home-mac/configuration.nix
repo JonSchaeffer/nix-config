@@ -43,9 +43,6 @@
     home = "/Users/${userConfig.name}";
   };
 
-  # Add ability to use TouchID for sudo
-  security.pam.enableSudoTouchIdAuth = true;
-
   # System settings
   system = {
     defaults = { 

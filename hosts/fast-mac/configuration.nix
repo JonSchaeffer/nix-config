@@ -34,20 +34,16 @@
 
   nix.package = pkgs.nix;
 
-  # Enable Nix daemon
-  services.nix-daemon.enable = true;
-
   # User configuration
   users.users.${userConfig.name} = {
     name = "${userConfig.name}";
     home = "/Users/${userConfig.name}";
   };
 
-  # Add ability to use TouchID for sudo
-  security.pam.enableSudoTouchIdAuth = true;
 
   # System settings
   system = {
+    primaryUser = userConfig.name;
     defaults = { 
       NSGlobalDomain = {
         AppleShowAllExtensions = true;
@@ -99,7 +95,6 @@
       "arc"
       "bruno"
       "chef-workstation"
-      "flux"
       "ghostty"
       "google-cloud-sdk"
       "lm-studio"
@@ -121,8 +116,7 @@
       "docker-buildx"
       "docker-compose"
       "docker-credential-helper"
-      "flux"
-      "fzf"
+      "fozf"
       "gcc"
       "gh"
       "git"
