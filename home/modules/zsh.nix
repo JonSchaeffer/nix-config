@@ -51,7 +51,15 @@
       export INFRA_PROVIDER=okta
       export INFRA_SKIP_VERSION_CHECK=true
       export PATH="$HOME/go/bin:$PATH"
-      export ANTHROPIC_MODEL="arn:aws:bedrock:us-east-2:635784355978:inference-profile/us.anthropic.claude-sonnet-4-5-20250929-v1:0"
+      export ANTHROPIC_DEFAULT_SONNET_MODEL="arn:aws:bedrock:us-east-2:635784355978:inference-profile/global.anthropic.claude-sonnet-4-5-20250929-v1:0"
+      export ANTHROPIC_MODEL="arn:aws:bedrock:us-east-2:635784355978:inference-profile/global.anthropic.claude-opus-4-5-20251101-v1:0"
+      # Bedrock
+      export AWS_PROFILE=bedrock
+      export AWS_REGION=us-east-2
+
+      # OpenCode-specific env vars
+      export GOOGLE_VERTEX_PROJECT=vertexai-core-products-6970
+      export GOOGLE_VERTEX_LOCATION=global  # or us-central1, us-east5, etc.
 
       plugins=(
         ansible
