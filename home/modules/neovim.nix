@@ -1,7 +1,7 @@
-{pkgs, ...}: let
-  neovim_config = ../../files/configs/nvim;
-in {
+{pkgs, ...}: {
   # Neovim text editor configuration
+  # NOTE: The lua config in files/configs/nvim/ is managed manually (not via nix)
+  # because lazy.nvim needs write access to lazy-lock.json in ~/.config/nvim/
   programs.neovim = {
     enable = true;
     package = pkgs.neovim-unwrapped;
@@ -18,13 +18,5 @@ in {
       shellcheck
       yaml-language-server
     ];
-  };
-
-  # source lua config from this repo
-  xdg.configFile = {
-    "nvim" = {
-      source = "${neovim_config}";
-      recursive = true;
-    };
   };
 }

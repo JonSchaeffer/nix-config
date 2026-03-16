@@ -3,7 +3,7 @@
 today=$(date +"%Y-%m-%d")
 tomorrow=$(gdate -d "tomorrow" '+%Y-%m-%d')
 yesterday=$(gdate -d "yesterday" '+%Y-%m-%d')
-file="/Users/jon/Library/Mobile Documents/iCloud~md~obsidian/Documents/notes/periodic-notes/daily-notes/$(date +"%Y-%m-%d").md"
+file="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/notes/periodic-notes/daily-notes/$(date +"%Y-%m-%d").md"
 
 cd "$SECOND_BRAIN" || exit
 

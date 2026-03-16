@@ -10,7 +10,7 @@ previous_wednesday=$(gdate -d "last wednesday" '+%Y-%m-%d')
 following_wednesday=$(gdate -d "next wednesday + 7 days" '+%Y-%m-%d')
 
 # Define the file path for the weekly note
-file="/Users/jon/Library/Mobile Documents/iCloud~md~obsidian/Documents/notes/periodic-notes/1-1/${next_wednesday}.md"
+file="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/notes/periodic-notes/1-1/${next_wednesday}.md"
 
 cd "$SECOND_BRAIN" || exit
 

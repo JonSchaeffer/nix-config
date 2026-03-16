@@ -3,29 +3,45 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+
+    syntaxHighlighting.enable = true;
+
+    oh-my-zsh = {
+      enable = true;
+      theme = "agnoster";
+      plugins = [
+        "ansible"
+        "copypath"
+        "docker"
+        "docker-compose"
+        "encode64"
+        "fluxcd"
+        "gh"
+        "git"
+        "golang"
+        "helm"
+        "kubectl"
+        "kubectx"
+        "ssh"
+        "tailscale"
+        "zsh-autosuggestions"
+      ];
+    };
+
     shellAliases = {
       # k9s
       k9sdev = "k9s --context infra:dev-awsuse2 -n api-services";
       k9sstag = "k9s --context infra:stg-awsuse2 -n api-services";
       k9sprod = "k9s --context infra:prd-awsuse2 -n api-services";
 
-      # Open Obisdian Notes
-      notes="cd /Users/jon/Library/Mobile Documents/iCloud~md~obsidian/Documents";
-      
-      # Make a daily node
-      day = "~/.config/scripts/day";
-
-      # Make a new Weekly 1-1 note
-      ooo = "~/.config/scripts/ooo";
-
-      # Make a new note
-      newnote = "~/.config/scripts/newnote";
+      # Open Obsidian Notes
+      notes = "cd \"$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents\"";
 
       # Use bat over cat
       cat = "bat --paging=never";
 
-      # User kubecolor over kubectl
-      kubectl="kubecolor";
+      # Use kubecolor over kubectl
+      kubectl = "kubecolor";
 
       # nvim
       v = "nvim";
@@ -33,24 +49,20 @@
       vim = "nvim";
 
       # github
-      ghpr = "gh pr create --fill --template pull_request_template.md -draft";
+      ghpr = "gh pr create --fill --template pull_request_template.md --draft";
 
       # search shell history
       hs = "history | grep";
-
     };
+
     initExtra = ''
-      # Path to your oh-my-zsh installation.
       export EDITOR=nvim
       export GPG_TTY=$(tty)
-      export ZSH="$HOME/.oh-my-zsh"
       export LIBVIRT_DEFAULT_URI=qemu:///system
-      ZSH_THEME="agnoster"
-      zstyle ':omz:update' mode auto      # update automatically without asking
+      zstyle ':omz:update' mode auto
       export INFRA_SERVER=infra.plat.k8s.secretcdn.net
       export INFRA_PROVIDER=okta
       export INFRA_SKIP_VERSION_CHECK=true
-      export PATH="$HOME/go/bin:$PATH"
       export ANTHROPIC_DEFAULT_SONNET_MODEL="arn:aws:bedrock:us-east-2:635784355978:inference-profile/global.anthropic.claude-sonnet-4-5-20250929-v1:0"
       export ANTHROPIC_MODEL="arn:aws:bedrock:us-east-2:635784355978:inference-profile/global.anthropic.claude-opus-4-5-20251101-v1:0"
       # Bedrock
@@ -59,37 +71,21 @@
 
       # OpenCode-specific env vars
       export GOOGLE_VERTEX_PROJECT=vertexai-core-products-6970
-      export GOOGLE_VERTEX_LOCATION=global  # or us-central1, us-east5, etc.
+      export GOOGLE_VERTEX_LOCATION=global
 
-      plugins=(
-        ansible
-        copypath
-        docker
-        docker-compose
-        encode64
-        fluxcd
-        gh
-        git
-        golang
-        helm
-        kubectl
-        kubectx
-        ssh
-        tailscale
-        zsh-autosuggestions
-      )
+      # Krew plugin support
+      export PATH="''${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
+      # Opencode
+      export PATH=$HOME/.opencode/bin:$PATH
 
-      source $ZSH/oh-my-zsh.sh
+      # Kubectx right prompt
+      RPS1='$(kubectx_prompt_info)'
+
       autoload -U +X bashcompinit && bashcompinit
       complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
-      # Kubectx config
-      # right prompt
-      RPS1='$(kubectx_prompt_info)'
-
       eval "$(zoxide init --cmd cd zsh)"
-      source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     '';
   };
 }

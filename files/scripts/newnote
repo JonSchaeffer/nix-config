@@ -55,4 +55,4 @@ if [[ $# -eq 1 ]]; then
 	filename=$1
 fi
 
-open_file "/Users/jon/Library/Mobile Documents/iCloud~md~obsidian/Documents/notes/01-Inbox"
+open_file "$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/notes/01-Inbox"
