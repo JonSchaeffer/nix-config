@@ -12,6 +12,7 @@
     enableRosetta = true;
     user = "${userConfig.name}";
     autoMigrate = true;
+    onActivation.cleanup = "uninstall";
   };
 
   # Nixpkgs configuration
