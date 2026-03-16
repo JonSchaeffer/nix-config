@@ -17,7 +17,6 @@
     brews = [
       "age"
       "ansible"
-      "flux"
       "hugo"
       "istioctl"
       "python@3.12"

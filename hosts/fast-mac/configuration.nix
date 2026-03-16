@@ -10,18 +10,31 @@
   homebrew = {
     casks = [
       "chef-workstation"
-      "raycast"
-      "spotify"
-      "zen-browser"
+      "gcloud-cli"
+      "session-manager-plugin"
+      "zed"
     ];
     brews = [
+      "awscli"
+      "cmctl"
       "colima"
       "docker"
       "docker-buildx"
       "docker-compose"
       "docker-credential-helper"
+      "envoy"
+      "findutils"
+      "golangci-lint"
       "gpg"
+      "hashicorp/tap/vault"
       "infrahq/tap/infra"
+      "k6"
+      "mkcert"
+      "nats-io/nats-tools/nats"
+      "node"
+      "tilt-dev/tap/ctlptl"
+      "watch"
+      "yamlfmt"
     ];
   };
 }

@@ -2,20 +2,23 @@
   # Install git via home-manager module
   programs.git = {
     enable = true;
-    userName = userConfig.fullName;
-    userEmail = userConfig.email;
-    delta = {
-      enable = true;
-      options = {
-        keep-plus-minus-markers = true;
-        light = false;
-        line-numbers = true;
-        navigate = true;
-        width = 280;
-      };
-    };
-    extraConfig = {
+    settings = {
+      user.name = userConfig.fullName;
+      user.email = userConfig.email;
       pull.rebase = "true";
+    };
+  };
+
+  # Delta pager (now a separate module from git)
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    options = {
+      keep-plus-minus-markers = true;
+      light = false;
+      line-numbers = true;
+      navigate = true;
+      width = 280;
     };
   };
 

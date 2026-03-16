@@ -12,7 +12,6 @@
     enableRosetta = true;
     user = "${userConfig.name}";
     autoMigrate = true;
-    onActivation.cleanup = "uninstall";
   };
 
   # Nixpkgs configuration
@@ -99,24 +98,30 @@
   # Machine-specific packages are added in each host's configuration.nix
   homebrew = {
     enable = true;
+    onActivation.cleanup = "uninstall";
     casks = [
       "bruno"
       "ghostty"
-      "google-cloud-sdk"
+      "raycast"
       "meetingbar"
       "obsidian"
       "tableplus"
       "unnaturalscrollwheels"
+      "spotify"
+      "zen"
     ];
     brews = [
       "bash"
       "cfssl"
+      "curl"
       "dagger"
+      "flux"
       "gcc"
       "gh"
       "glib"
       "helm"
       "jq"
+      "just"
       "k3d"
       "k9s"
       "kind"
