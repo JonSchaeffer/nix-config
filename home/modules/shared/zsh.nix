@@ -5,6 +5,7 @@
     enableCompletion = true;
 
     syntaxHighlighting.enable = true;
+    autosuggestion.enable = true;
 
     oh-my-zsh = {
       enable = true;
@@ -24,7 +25,6 @@
         "kubectx"
         "ssh"
         "tailscale"
-        "zsh-autosuggestions"
       ];
     };
 
@@ -56,6 +56,11 @@
     };
 
     initContent = ''
+      # Hide user@host in agnoster prompt (shown only when in SSH)
+      DEFAULT_USER=$USER
+      # Hide AWS profile from agnoster prompt
+      prompt_aws() {}
+
       export EDITOR=nvim
       export GPG_TTY=$(tty)
       export LIBVIRT_DEFAULT_URI=qemu:///system

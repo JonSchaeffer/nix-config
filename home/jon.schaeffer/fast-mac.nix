@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../modules/common.nix
+    ../modules/fast-mac
   ];
 
    # Enable home-manager

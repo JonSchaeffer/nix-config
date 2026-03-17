@@ -1,0 +1,6 @@
+{...}: {
+  imports = [
+    ../shared
+    ./opencode.nix
+  ];
+}

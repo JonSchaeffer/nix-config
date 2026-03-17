@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  scripts = ./../../files/scripts;
+  scripts = ./../../../files/scripts;
 in {
   # Source scripts from the home-manager store
   home.file = {
