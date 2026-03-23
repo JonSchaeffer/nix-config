@@ -100,6 +100,7 @@
     enable = true;
     onActivation.cleanup = "uninstall";
     casks = [
+      "1password"
       "bruno"
       "ghostty"
       "raycast"
@@ -107,6 +108,7 @@
       "obsidian"
       "tableplus"
       "unnaturalscrollwheels"
+      "signal"
       "spotify"
       "zen"
     ];

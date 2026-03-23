@@ -34,6 +34,7 @@
       "node"
       "tilt-dev/tap/ctlptl"
       "watch"
+      "worktrunk"
       "yamlfmt"
     ];
   };

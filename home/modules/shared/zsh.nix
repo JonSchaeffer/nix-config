@@ -91,6 +91,9 @@
       complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
       eval "$(zoxide init --cmd cd zsh)"
+
+      # Warp terminal shell integration
+      if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
     '';
   };
 }
