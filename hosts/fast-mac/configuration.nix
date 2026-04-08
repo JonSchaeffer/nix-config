@@ -18,6 +18,7 @@
       "awscli"
       "cmctl"
       "colima"
+      "cue-lang/tap/cue"
       "docker"
       "docker-buildx"
       "docker-compose"
